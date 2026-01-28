@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="js-container container">
+    <div class="js-calculator calculator">
+      <div class="display-contain"><input type="text" class="display-box"></div>
+      <div class="ac-btn" onclick="displayEl.value ='' ">AC</div>
+      <div class="delete-btn" onclick="displayEl.value = displayEl.value.slice(0,-1)">DEL</div>
+      <div class="percent-btn" onclick="displayEl.value += '%'">%</div>
+      <div class="division-btn" onclick="displayEl.value += '/'">÷</div>
+      <div class="7-btn" onclick="displayEl.value += '7'">7</div>
+      <div class="8-btn" onclick="displayEl.value += '8'">8</div>
+      <div class="9-btn" onclick="displayEl.value += '9'">9</div>
+      <div class="multiply-btn" onclick="displayEl.value += '*'">x</div>
+      <div class="4-btn" onclick="displayEl.value += '4'">4</div>
+      <div class="5-btn" onclick="displayEl.value += '5'">5</div>
+      <div class="6-btn" onclick="displayEl.value += '6'">6</div>
+      <div class="minus-btn" onclick="displayEl.value += '-'">-</div>
+      <div class="1-btn" onclick="displayEl.value += '1'">1</div>
+      <div class="2-btn" onclick="displayEl.value += '2'">2</div>
+      <div class="3-btn" onclick="displayEl.value += '3'">3</div>
+      <div class="plus-btn" onclick="displayEl.value += '+'">+</div>
+      <div class="0-btn" onclick="displayEl.value += '0'">0</div>
+      <div class="dot-btn" onclick="displayEl.value += '.'">.</div>
+      <div class="equal-btn" onclick="displayEl.value = eval(displayEl.value)">=</div>
+    </div>
+  </div>
+  <script src="website.js"></script>
+</body>
+</html>

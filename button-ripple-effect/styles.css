@@ -1,0 +1,46 @@
+body{
+  margin:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: antiquewhite;
+}
+
+.btn{
+  background-color: pink;
+  padding: 20px 40px; /* The first value if for top and bottom then the second value is for right and left */
+
+  /* Another shorthand is also available - padding:10px 20px 10px 20px => for this start from top then move to right , bottom and finally left ., moving in clockwise direction (always start from the top) */
+  font-family: 'Courier New', Courier, monospace;
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden; /* This works only if the position: relative is given */
+}
+
+.btn::before{
+  content: ""; /* This property is set the content to be displayed before and the properties given below are applied only on this content */
+
+  position: absolute; /* Remember AR - first comes the absolute(above) then comes the relative(under) */
+  width: 0px;  /* if width and height not given then transition does not work */
+  height: 0px;
+  background-color: rgb(251, 115, 57);
+  border-radius: 50%;
+  /* To display the content with position absolute in the exact center */
+  top: var(--yPos);
+  left: var(--xPos);
+  transform: translate(-50%,-50%); /* Using top:50% and left:50% is alone not enough to display the content exactly center, need to add transform: translate(-50%,-50%) as well */
+  transition: width,height , 500ms;
+}
+
+.btn:hover::before{
+  width: 500px;
+  height: 500px;
+}
+
+.btn span{
+  position: relative;
+  z-index: 1; /* This works only if the position:relative is given for the content present under which need to be displayed above because of the use of z-index */
+}
